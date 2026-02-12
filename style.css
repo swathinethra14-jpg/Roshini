@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Prevents scrollbars during heart rain */
+    background-color: #ffe5ec;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: none;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container.active {
+    display: flex;
+}
+
+#no-btn {
+    position: absolute; /* Needed for the jumping effect */
+    transition: 0.1s;
+}
+
+/* Carousel Fade Effect */
+.carousel {
+    position: relative;
+    width: 400px;
+    height: 450px;
+}
+
+.slide {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+/* Styling the individual slide */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    border-radius: 15px;
+    overflow: hidden; /* Keeps the caption inside the rounded corners */
+}
+
+/* Making the images look consistent */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This prevents the images from stretching */
+}
+
+/* The Caption Overlay */
+.caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Transparent black background */
+    color: white;
+    padding: 15px 0;
+    font-size: 1.2rem;
+    font-style: italic;
+    text-align: center;
+}
+/* Heart Rain Animation */
+.heart {
+    position: fixed;
+    top: -10px;
+    font-size: 20px;
+    user-select: none;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
