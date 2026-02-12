@@ -20,9 +20,16 @@ body {
     display: flex;
 }
 
-#no-btn {
-    position: absolute; /* Needed for the jumping effect */
-    transition: 0.1s;
+#yesButton {
+    background-color: #ff4081;
+    color: white;
+    margin-right: 10px;
+}
+
+#noButton {
+    background-color: #9e9e9e;
+    color: white;
+    position: absolute; /* Needed for the "jump" effect */
 }
 
 /* Carousel Fade Effect */
@@ -85,4 +92,5 @@ body {
     to {
         transform: translateY(110vh) rotate(360deg);
     }
+
 }
